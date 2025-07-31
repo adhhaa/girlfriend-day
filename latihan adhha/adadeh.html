@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Girlfriend Day 💖</title>
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(to bottom right, #ffb6c1, #ff69b4);
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        max-width: 400px;
+        animation: fadeIn 1.2s ease-in-out;
+        position: relative;
+        z-index: 2;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    .heart {
+        font-size: 2.5rem;
+        animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #fff;
+        color: #ff69b4;
+        font-weight: bold;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+        background: #ffe4ec;
+    }
+
+    /* Sakura Petals */
+    .petal {
+        position: fixed;
+        top: -10px;
+        background: pink;
+        border-radius: 150% 0 150% 0;
+        transform: rotate(45deg);
+        opacity: 0.8;
+        pointer-events: none;
+        z-index: 1;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="heart">❤️</div>
+    <h1>Happy Girlfriend Day</h1>
+    <p>
+        Selamat Hari Girlfriend Day buat Adek yang tiap hari nyebelin tapi selalu bikin Mas kangen!
+        Maacih udah mau sabar sama mas yang suka ngambek, telat bales chat, tapi selalu cinta kamu 100%.
+        Maaf ya, mas cuma bisa kasih ini ke adek.
+        Mas bangga banget punya adek🫶🏻🫶🏻🫶🏻.
+        Love you Adek 🫶🏻🫶🏻🫶🏻
+    </p>
+    <a href="#" class="btn">Love You 💖</a>
+</div>
+
+<script>
+    // Buat kelopak sakura jatuh
+    function createPetal() {
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+        
+        const size = Math.random() * 10 + 10; // ukuran kelopak
+        petal.style.width = `${size}px`;
+        petal.style.height = `${size}px`;
+        
+        petal.style.left = Math.random() * window.innerWidth + 'px';
+        
+        petal.style.animation = `fall ${Math.random() * 5 + 5}s linear forwards`;
+        
+        document.body.appendChild(petal);
+        
+        setTimeout(() => petal.remove(), 10000); // hapus setelah jatuh
+    }
+
+    // Animasi jatuh
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+    `;
+    document.head.appendChild(style);
+
+    setInterval(createPetal, 300); // kelopak muncul tiap 0.3 detik
+</script>
+
+</body>
+</html>
